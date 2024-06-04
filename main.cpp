@@ -38,3 +38,39 @@ void listFiles() {
     }
   }
 }
+
+void readFile() {
+  string filename;
+  cout << "Enter filename to read: ";
+  cin >> filename;
+
+  // Check if filename is empty
+  if (filename.empty()) {
+    cerr << "Error: Please enter a filename.\n";
+    return;
+  }
+
+  ifstream file(filename);
+  if (file.is_open()) {
+    cout << "Reading file: " << filename << endl;
+    string line;
+    int lineNumber = 1; // Track line number for better error reporting
+
+    // Read and display file contents line by line
+    while (getline(file, line)) {
+      cout << lineNumber << ". " << line << endl;
+      lineNumber++;
+    }
+
+    file.close();
+    cout << "File read successfully.\n";
+  } else {
+    cerr << "Error opening file: " << filename << endl;
+  }
+}
+// Function to create a new file (basic implementation)
+void createFile() {
+  int filename;
+  cout << "Enter filename for new file: ";
+  cin >> filename;
+
