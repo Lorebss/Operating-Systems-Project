@@ -70,7 +70,16 @@ void readFile() {
 }
 // Function to create a new file (basic implementation)
 void createFile() {
-  int filename;
+  string filename;
   cout << "Enter filename for new file: ";
-  cin >> filename;
+  cin >> filename; 
+
+   ofstream file(filename);
+  if (file.is_open()) {
+    cout << "File created successfully.\n";
+    file.close();
+  } else {
+    cerr << "Error creating file.\n";
+  }
+}
 
