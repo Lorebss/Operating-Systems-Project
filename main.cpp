@@ -29,3 +29,12 @@ void listFiles() {
 
   closedir(dir);
 }
+ if (filenames.empty()) {
+    cout << "No files found.\n";
+  } else {
+    cout << "Files:\n";
+    for (const string& filename : filenames) {
+      cout << filename << endl;
+    }
+  }
+}
