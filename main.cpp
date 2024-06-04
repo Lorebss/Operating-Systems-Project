@@ -16,3 +16,16 @@ void displayMenu() {
   cout << "0. Exit\n";
   cout << "Enter your choice: ";
 }
+
+// Function to list files in the current directory (corrected)
+void listFiles() {
+  DIR *dir = opendir(".");
+  if (dir == NULL) {
+    cerr << "Error opening directory.\n";
+    return; // Exit the function if directory cannot be opened
+  }
+
+  // Rest of the code for listing files...
+
+  closedir(dir);
+}
