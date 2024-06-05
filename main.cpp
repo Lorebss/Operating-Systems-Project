@@ -82,4 +82,31 @@ void createFile() {
     cerr << "Error creating file.\n";
   }
 }
+int main() {
+  int choice;
+
+  do {
+    displayMenu();
+    cin >> choice;
+
+    switch (choice) {
+      case 1:
+        listFiles();
+        break;
+      case 2:
+        readFile();
+        break;
+      case 3:
+        createFile();
+        break;
+      case 0:
+        cout << "Exiting...\n";
+        break;
+      default:
+        cout << "Invalid choice.\n";
+    }
+  } while (choice != 0);
+
+  return 0;
+}
 
